@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <!-- <div>生当作人杰</div>
+    <button>点击</button>
+    <script>
+      var obtn = document.querySelector("button");
+      var div = document.querySelector("div");
+      obtn.onclick = function(){
+          div.innerHTML = "死亦为鬼雄！";
+      }   
+      obtn.onclick  =function() {
+          
+      }
+-->
+     <!-- <script>
+          var arr1 = [1,2,3,4,5,6];
+          arr1.forEach(function (val,index) {
+              console.log(val,index);
+          })
+          arr1.map(function (value, index, arr1) {
+              console.log(value,index);
+          })
+          for (var i in arr1){
+              console.log(arr1[i]);
+          }
+          for (var i of arr1){
+              console.log(i)
+          }
+      </script>
+-->
+   <p>请输入：<input type="text" id="input"> <button onclick="f()">添加</button></p>
+   <p id="print"></p>
+   请输入验证码：<input type="text" id="input1"><span id="span" style="margin-left: 10px"></span><button onclick="f1()" style="margin-left: 10px">点击</button>
+   <br>
+   <script>
+    var input = document.getElementById("input");
+    var arr = [];
+    function f() {
+
+        arr.push(input.value);
+        input.value = "";
+        document.getElementById("print").innerHTML = arr;
+    }
+
+
+
+       var array =[100,90,98,70,85,60,87];
+        var max =array[0];
+       for (var i = 0;i<array.length;i++){
+            for (var j = i;j<array.length;j++){
+                if (array[i]>array[j]){
+                    var z = array[i];
+                    array[i]=array[j];
+                    array[j] = z;
+
+            }
+
+
+                }
+
+           document.write(array[i]+"&nbsp;");
+       }
+    document.write("<br>");
+
+
+    for (var i = 0;i<array.length;i++){
+        if (max<array[i]){
+            max = array[i];
+        }
+    }
+    document.write("数组最大值："+max+"<br>");
+    var arr5 = new Array(100);
+    for (var i = 0;i<100;i++) {
+        arr5.push(parseInt(Math.random()*100));
+    }
+    var  radom = arr5.find(function (val) {
+        return val>90;
+    });
+    document.write("大于90小于100的随机数:"+radom+"<br>");
+
+    var arrNUmber = [0,1,2,3,4,5,6,7,8,9,10,"a","b","c","d","e","f","g","h","i","j","k","l","i","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+      var b = [];
+      for (var i = 0;i<5;i++){
+          b.push(arrNUmber[parseInt(Math.random()*arrNUmber.length)]);
+          var  str = b.join("");
+
+      }
+      document.getElementById("span").innerHTML = str;
+      function f1() {
+          var input1 = document.getElementById("input1");
+          input1.value.length = 5;
+          if (input1.value == str){
+              document.getElementById("span").innerHTML = "验证码正确！";
+
+          }else {
+              document.getElementById("span").innerHTML = "验证码错误，刷新界面,重新输入！";
+          }
+
+      }
+
+   </script>
+</body>
+</html>
