@@ -1,0 +1,264 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+/*导航栏样式开始*/
+.nav{
+    width: 100%;
+    height: 85px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 666;
+}
+.nav img{
+    float: left;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+.nav ul{
+    float: right;
+}
+.nav ul li {
+    float: left;
+    width: 156px;
+    height: 85px;
+    line-height: 85px;
+    cursor: pointer;
+    position: relative;
+
+}
+.nav li a{
+    position: relative;
+    z-index: 666;
+}
+.nav ul i{
+    font-size: 20px;
+    margin-right: 13px;
+}
+.nav ul a{
+    color: white;
+}
+.hidden{
+    position: fixed;
+    height: 100%;
+    width: 156px;
+    top: 0;
+    right: -156px;
+    background: rgba(0,0,0,.5);
+    transition: all .5s;
+}
+.nav li:nth-child(2):hover .hidden{
+    right: 0;
+}
+/*导航栏样式结束*/
+/*第一块开始*/
+.one{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: none;
+}
+video{
+    width: 100%;
+
+}
+.one-text{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+.one-text img{
+    width: 716px;
+
+    margin:0 auto;
+    margin-top: 280px;
+    display: block;
+}
+.download{
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid white;
+    color: white;
+    display: block;
+    margin: 30px auto 20px;
+
+}
+.one-text i{
+    display: block;
+    color: white;
+    font-size: 40px;
+    animation: carousel 1s infinite linear;
+}
+@keyframes carousel {
+    0%{
+        transform: translateY(-3px);
+    }
+    25%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(3px);
+    }
+    75%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-3px);
+    }
+}
+
+/*第一快结束*/
+/*第二块*/
+.two{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.two img{
+    width: 100%;
+    height: 100%;
+}
+.two ul{
+
+    width: 510px;
+    height: 71px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -255px;
+
+
+}
+.two-icon{
+    width:102px ;
+    height: 70px;
+    float: left;
+    border-bottom: 1px solid rgba(255,255,255,.6) ;
+
+}
+.two-icon:hover{
+       border-bottom: 1px solid rgba(255,255,255) ;
+
+}
+.two-icon:hover div{
+    transform: translateY(-2px);
+
+}
+.two-icon div{
+    transition: all .5s;
+}
+.item1,.item2,.item3,.item4,.item5{
+    width: 47px;
+    height: 41px;
+    margin: 11px auto;
+    background: url("../images/carousel_btns.png") no-repeat;
+    background-size: 800px;
+
+}
+.item1{
+    background-position: -630px;
+}
+.item2{
+    background-position: -113px;
+}
+.item3{
+    background-position: -722px;
+}
+.item4{
+    background-position: -215px;
+}
+.item5{
+    background-position: -437px;
+}
+/*第三部分*/
+.three{
+    width: 100%;
+    height: 100%;
+}
+.three-left,.three-right{
+    width: 50%;
+    height: 100%;
+    float: left;
+
+    /*overflow: hidden;*/
+}
+.three img,.four img  {
+    width: 100%;
+    height: 100%;
+}
+.left-top,.left-bottom{
+    width: 100%;
+    height: 50%;
+}
+.left-top,.left-bottom,.three-right,.four-left,.right-top,.bottom-left,.bottom-right{
+    position: relative;
+    overflow: hidden;
+}
+.img-hidden{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: rgba(0,0,0,.5);
+    transition: all .5s;
+}
+.left-top:hover .img-hidden,.left-bottom:hover .img-hidden,.three-right:hover .img-hidden,.four-left:hover .img-hidden,
+.right-top:hover .img-hidden,.bottom-left:hover .img-hidden,.bottom-right:hover .img-hidden{
+    left: 0;
+}
+/*第四部分*/
+.four{
+    width: 100%;
+    height: 100%;
+}
+
+.four-left{
+    width: 34%;
+    height: 100%;
+    float: left;
+}
+.four-right{
+    width: 66%;
+    height: 100%;
+    float: left;
+}
+.right-top,.right-bottom{
+    width: 100%;
+    height: 50%;
+}
+.bottom-left{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.bottom-right{
+    width: 50%;
+    height: 100%;
+}
+.five{
+    width: 100%;
+    height: 100%;
+}
+.aside{
+    width: 12px;
+    height: 185px;
+    position: fixed;
+    top:50%;
+    margin-top: -92.5px;
+    right: 40px;
+}
+.aside li{
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-top: 10px;
+    cursor: pointer;
+}
