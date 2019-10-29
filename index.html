@@ -15,31 +15,46 @@
 </head>
 <body>
 <script>
-    function createFlower(size,width,top) {
+    function CreateFlower(size,width,top) {
         this.size = size;
         this.width = width;
         this.top = top;
     }
-
-    var obj ={
-        create:function () {
-           var span = document.createElement("span");
+    var count = 0;
+    var i =1;
+    CreateFlower.prototype.create= function () {
+            var newthis = this;
+            var span = document.createElement("span");
            span.innerHTML = "❤";
            span.style.fontSize = this.size+"px";
            span.style.left = this.width+"px";
-           span.style.top = this.top+"px";
-           span.style.color = `rgb(${Math.random()*255+1},${Math.random()*255+1},${Math.random()*255+1})`
+           span.style.color = `rgb(${Math.random()*255+1},${Math.random()*255+1},${Math.random()*255+1})`;
            document.body.appendChild(span);
-        }
+           setInterval(function () {
+               count++;
+               if (count%2==0){
+                   newthis.width +=i;
+                   span.style.left = newthis.width+"px";
+               }else {
+                   newthis.width -=i;
+                   span.style.left = newthis.width+"px";
+               }
+                if (newthis.top<2000){
+                    span.style.top = newthis.top+"px";
+                    newthis.top+=10;
+                }else {
+                    span.style.display = "none";
+                }
+            },100)
     }
-    createFlower.prototype = obj;
-setInterval(function () {
-    var c1 = new createFlower(Math.random()*80+20,Math.random()*2000+1,Math.random()*2000+1);
+    setInterval(function () {
+        var c1 = new CreateFlower(Math.random()*80+20,Math.random()*document.body.offsetWidth+1,10);
+        c1.create();
+    },500);
 
-    c1.create();
 
-},10)
-    console.log(Math.random()*2000+1);
+
+
 
 </script>
 </body>
