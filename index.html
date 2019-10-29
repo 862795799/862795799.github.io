@@ -2,127 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>控制小球</title>
+    <title>flower</title>
     <style>
         body{
-            margin: 0;
-        }
-        #box{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
             background: red;
-            position: absolute;
         }
-        #spec{
+        span{
             position: fixed;
-            top:100px;
-            left: 0;
-        }
-        #win{
-            width: 6px;
-            height: 6px;
-            border-radius: 6px;
-            background: black;
-            position: fixed;
-            top: 50%;
-            left: 50%;
+
         }
     </style>
 </head>
 <body>
-<div id="box">
-
-</div>
-<div id="spec">上下左右移动 ，按下ctrl消失 ，按下enter 出现,终点在黑点附近,加油！</div>
-<div id="win"></div>
 <script>
-    var box =document.getElementById("box");
-    var spec = document.getElementById("spec");
-    var left1 =0;
-    var top1 = 0;
-
-    document.body.onkeydown = function (e) {
-        switch (e.keyCode) {
-            case 38:
-                spec.style.display = "none";
-                if (top1 == 0){
-                    top1 = 0;
-                    alert("你撞墙了");
-                }  else {
-                    top1--;
-                }
-                if (top1 == parseInt(window.innerHeight/2 - 50) && left1 == parseInt(window.innerWidth/2-50)+1 ){
-                    alert("你赢了")
-                }
-                box.style.top = top1+"px";
-                console.log(parseInt(window.innerHeight/2 - 50));
-                console.log(top1);
-                console.log(parseInt(window.innerWidth/2-50) );
-                console.log(left1);
-                break;
-            case 39:
-                spec.style.display = "none";
-                if (left1>=window.innerWidth-100){
-                    left1 = window.innerWidth-100;
-                    alert("你撞墙了！")
-                }  else {
-                    left1++;
-                }
-                if (top1 == parseInt(window.innerHeight/2 - 50) && left1 == parseInt(window.innerWidth/2-50)+1 ){
-                    alert("你赢了")
-                }
-                box.style.left = left1+"px";
-                console.log(parseInt(window.innerHeight/2 - 50));
-                console.log(top1);
-                console.log(parseInt(window.innerWidth/2-50) );
-                console.log(left1);
-                break;
-            case 40:
-                spec.style.display = "none";
-                if (top1 >= window.innerHeight-100){
-                    top1 = window.innerHeight-100;
-                    alert("你撞墙了！")
-                }  else {
-                    top1++;
-                }
-                if (top1 == parseInt(window.innerHeight/2 - 50) && left1 == parseInt(window.innerWidth/2-50)+1 ){
-                    alert("你赢了")
-                }
-                box.style.top = top1+"px";
-                console.log(parseInt(window.innerHeight/2 - 50));
-                console.log(top1);
-                console.log(parseInt(window.innerWidth/2-50) );
-                console.log(left1);
-                break;
-            case 37:
-                spec.style.display = "none";
-                if (left1 ==0){
-                    left1 = 0;
-                    alert("你撞墙了！")
-                } else{
-                    left1--;
-                }
-                if (top1 == parseInt(window.innerHeight/2 - 50) && left1 == parseInt(window.innerWidth/2-50)+1 ){
-                    alert("你赢了")
-                }
-                box.style.left = left1+"px";
-                console.log(parseInt(window.innerHeight/2 - 50));
-                console.log(top1);
-                console.log(parseInt(window.innerWidth/2-50) );
-                console.log(left1);
-                break;
-            case 17:
-                box.style.display = "none";
-                break;
-            case 13:
-                box.style.display = "block";
-                break;
-
-        }
-
-
+    function createFlower(size,width,top) {
+        this.size = size;
+        this.width = width;
+        this.top = top;
     }
+
+    var obj ={
+        create:function () {
+           var span = document.createElement("span");
+           span.innerHTML = "❤";
+           span.style.fontSize = this.size+"px";
+           span.style.left = this.width+"px";
+           span.style.top = this.top+"px";
+           span.style.color = `rgb(${Math.random()*255+1},${Math.random()*255+1},${Math.random()*255+1})`
+           document.body.appendChild(span);
+        }
+    }
+    createFlower.prototype = obj;
+setInterval(function () {
+    var c1 = new createFlower(Math.random()*80+20,Math.random()*2000+1,Math.random()*2000+1);
+
+    c1.create();
+
+},10)
+    console.log(Math.random()*2000+1);
+
 </script>
 </body>
 </html>
